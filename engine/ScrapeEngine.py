@@ -30,3 +30,5 @@ class ScrapeEngine:
     def get_emails(self) -> List[str]:
         x = EmailModule(self.url)
         return x.get_emails()
+
+    def run(self, permission: List[str], module: int):
