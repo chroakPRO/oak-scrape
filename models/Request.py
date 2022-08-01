@@ -3,9 +3,9 @@ from engine.ScrapeEngine import ScrapeEngine
 from models.ModulesEnum import ModulesEnum
 from typing import List, Dict, Any
 
+
 class Request:
 
-    
     def __init__(self) -> None:
         self.nCount = 0
         self.countRequired = 3
@@ -20,13 +20,13 @@ class Request:
             return True
         else:
             return False
-    
+
     def setMODULES(self, modules: str) -> None:
         self.MODULES = modules
         module = ModulesEnum()
         if self.MODULES in module.Enum:
             self.nCount + 1
-        else: 
+        else:
             pass
 
     def setKey(self, key: str) -> bool:

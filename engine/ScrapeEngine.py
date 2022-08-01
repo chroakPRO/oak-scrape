@@ -15,20 +15,18 @@ class ScrapeEngine:
         self.module = module
         self.key = key
 
-
     def get_soup(self) -> bs.BeautifulSoup:
         response = requests.get(self.url)
         return bs.BeautifulSoup(response.text, 'lxml')
 
-
     def get_links(self) -> List[str]:
         x = LinkModule(self.url)
         return x.get_links()
-        
+
     def get_links_with_text(self) -> List[str]:
         x = LinkModule(self.url)
         return x.get_links_with_text()
-    
+
     def get_emails(self) -> List[str]:
         x = EmailModule(self.url)
         return x.get_emails()

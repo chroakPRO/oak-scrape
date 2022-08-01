@@ -6,6 +6,7 @@ class LinkModule():
     Args:
         ScrapeEngine (_type_): _description_
     """
+
     def __init__(self, url: str):
         """_summary_
 

@@ -1,6 +1,7 @@
 import enum
 from typing import List
 
+
 class ModulesEnum():
     def __init__(self) -> None:
         self.EMAIL: int = 0x00
