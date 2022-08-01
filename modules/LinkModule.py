@@ -1,7 +1,6 @@
-from engine.ScrapeEngine import ScrapeEngine
 
 
-class LinkModule(ScrapeEngine):
+class LinkModule():
     """_summary_
 
     Args:

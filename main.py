@@ -1,18 +1,25 @@
-from engine.ScrapeEngine import ScrapeEngine
-from modules.EmailModule import EmailModule
-from modules.LinkModule import LinkModule
-from modules.TokenizationModule import TokenizationModule
 from models.Request import Request
 from models.Url import Url
+from models.ModulesEnum import ModulesEnum
 
 
 def main():
-    request = Request()
-    request.setURL(Url('https://www.google.com'))
-    request.setMODULES(ModulesEnum.LINK)
-    request.setKey('test')
-    request.sendRequest()
+    print(12)
 
+    request = Request()
+    step01 = request.setURL("https://www.google.com")
+    if step01:
+        print("URL set")
+        step01 = None
+
+    module = ModulesEnum()
+    print("M;ODULE LINK {}".format(module.LINK))
+    if request.setMODULES(module.LINK):
+        print("MODULE set")
+    if request.setKey('test'):
+        print("KEY set")
+    if request.sendRequest():
+        print("Request sent")
 
 
 if __name__ == '__main__':

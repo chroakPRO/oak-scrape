@@ -1,6 +1,6 @@
 import bs4 as bs
 import requests
-import urllib.request
+
 from typing import List
 from modules.EmailModule import EmailModule
 from modules.LinkModule import LinkModule
@@ -15,9 +15,11 @@ class ScrapeEngine:
         self.module = module
         self.key = key
 
+
     def get_soup(self) -> bs.BeautifulSoup:
         response = requests.get(self.url)
         return bs.BeautifulSoup(response.text, 'lxml')
+
 
     def get_links(self) -> List[str]:
         x = LinkModule(self.url)
