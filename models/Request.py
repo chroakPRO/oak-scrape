@@ -27,6 +27,7 @@ class Request:
         if self.MODULES in module.Enum:
             self.nCount + 1
         else:
+            self.MODULES = None
             pass
 
     def setKey(self, key: str) -> bool:
@@ -42,16 +43,16 @@ class Request:
         print("sen_requewst {}".format(self.countRequired))
         if self.nCount != self.countRequired:
             scrapObj = ScrapeEngine(self.URL, self.MODULES, self.KEY)
-            scrapObj.get_soup()
-            print(self.MODULES)
+            print(scrapObj.get_soup())
             module = ModulesEnum()
             if self.MODULES == module.LINK:
                 print(12)
                 return scrapObj.get_links()
             elif self.MODULES == module.EMAIL:
                 return scrapObj.get_emails()
-            elif self.MODULES == module.LINK_WITH_TEXT:
-                return scrapObj.get_links_with_text()
+            elif self.MODULES == module.TOKEN:
+                print(1212)
+                return scrapObj.get_words()
             return True
         else:
             return False

@@ -7,11 +7,11 @@ def main():
     print(12)
 
     request = Request()
-    if request.setURL("https://www.google.com"):
+    if request.setURL("https://oaksec.dev"):
         print("URL set")
     module = ModulesEnum()
     print("MODULE LINK {}".format(module.LINK))
-    if request.setMODULES(module.LINK):
+    if request.setMODULES(module.TOKEN):
         print("MODULE set")
     if request.setKey('test'):
         print("KEY set")

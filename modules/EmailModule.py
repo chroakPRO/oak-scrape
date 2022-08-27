@@ -1,5 +1,6 @@
 from typing import List
 from models.Url import Url
+import re
 
 
 class EmailModule:
